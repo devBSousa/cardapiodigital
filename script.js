@@ -156,6 +156,8 @@ checkoutBtn.addEventListener("click", function(){
     window.open(`https://wa.me/${phone}?text=${encodeURIComponent(message)}`, "_blank")
 
     cart = [];
+    updateCartModal()
+    
 })
 
 //verificar hora e manipular horario 
