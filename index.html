@@ -173,7 +173,7 @@
     <!--Fim do menu-->
     
     <!--Modal-->
-    <div class="bg-black/50 w-full h-full fixed top-0 left-0 z-[99] items-center justify-center hidden">
+    <div id="cart-modal" class="bg-black/50 w-full h-full fixed top-0 left-0 z-[99] items-center justify-center hidden">
         <div class="bg-white p-5 rounded-md min-w-[90%] md:min-w-[600px]">
             <h2 class="text-center text-bold text-2xl mb-2">Meu carrinho</h2>
             <div id="cart-items" class="flex justify-between mb-2 flex-col"></div>
@@ -182,11 +182,17 @@
 
             <p class="font-bold">Endereço de Entrega</p>
             <input type="text"
-            placeholder="Digite seu endereço completo"
-            id="adress"
+            placeholder="Digite seu endereço completo  e ponto de referência"
+            id="address"
             class="w-full border-2 p-1 rounded my-1"
             >
-            <p class="text-red-500 hidden" id="adress-warn">Digite seu endereço completo!</p>
+            <p class="font-bold">Observação</p>
+            <input type="text"
+            placeholder="Ex: Retirar cebola"
+            id="obs"
+            class="w-full border-2 p-1 rounded my-1"
+            >
+            <p class="text-red-500 hidden" id="address-warn">Digite seu endereço completo!</p>
 
             <div class="flex items-center justify-between mt-5 w-full">
                 <button id="close-modal-btn">Fechar</button>
@@ -205,6 +211,6 @@
            <i class="fa fa-cart-plus text-lg text-white"></i>
         </button>
     </footer>
+  <script src="script.js"></script>
 </body>
-
 </html>
