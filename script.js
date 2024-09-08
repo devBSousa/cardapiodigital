@@ -129,11 +129,37 @@ checkoutBtn.addEventListener("click", function(){
     
     const isOpen = checkopen();
     if(!isOpen){
-        alert("RESTAURANTE FECHADO NO MOMENTO!")
+        Toastify({
+            text: "Estabelecimento fechado no momento!",
+            duration: 3000,
+            close: true,
+            gravity: "top", // `top` or `bottom`
+            position: "right", // `left`, `center` or `right`
+            stopOnFocus: true, // Prevents dismissing of toast on hover
+            style: {
+              background: "#ef4444",
+            },
+            onClick: function(){} // Callback after click
+          }).showToast();
         return;
     }
     
-    if(cart.length === 0) return;
+    //if(cart.length === 0) return;
+    if(cart.length === 0){
+        Toastify({
+            text: "Seu carrinho está vázio!",
+            duration: 3000,
+            close: true,
+            gravity: "top", // `top` or `bottom`
+            position: "right", // `left`, `center` or `right`
+            stopOnFocus: true, // Prevents dismissing of toast on hover
+            style: {
+              background: "#ef4444",
+            },
+            onClick: function(){} // Callback after click
+          }).showToast();
+          return;
+    };
     if(addressInput.value  === ""){
         addressWarn.classList.remove("hidden")
         addressInput.classList.add("border-red-500")
