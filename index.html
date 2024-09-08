@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,100&display=swap" rel="stylesheet">
@@ -118,6 +119,94 @@
                     </div>
                 </div>
             </div>
+
+            
+            <div class="flex gap-2">
+                <img src="assets/hamb-5.png" 
+                    alt="Smash"
+                    class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300">
+                <div>
+                    <p class="font-bold text-lg">Hamburguer com creme de cheddar</p>
+                    <p class="text-sm">Pão Brioche, 160g de carne bovina, bacon e creme de chedar</p>
+                    
+                    <div class="flex items-center gap-2 justify-between mt-3">
+                        <p class="font-bold text-lg">R$30.00</p>
+                        <button 
+                            class="bg-gray-900 px-5 rounded add-to-cart-btn"
+                            data-name="Hamburguer com creme de cheddar"
+                            data-price="30.00"
+                            >
+                            <i class="fa fa-cart-plus text-lg text-white"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            
+            <div class="flex gap-2">
+                <img src="assets/hamb-6.png" 
+                    alt="Smash"
+                    class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300">
+                <div>
+                    <p class="font-bold text-lg">Hamburguer com fritas</p>
+                    <p class="text-sm">Pão Brioche, 160g de carne bovina, bacon e creme de chedar</p>
+                    
+                    <div class="flex items-center gap-2 justify-between mt-3">
+                        <p class="font-bold text-lg">R$30.00</p>
+                        <button 
+                            class="bg-gray-900 px-5 rounded add-to-cart-btn"
+                            data-name="Hamburguer com fritas"
+                            data-price="30.00"
+                            >
+                            <i class="fa fa-cart-plus text-lg text-white"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            
+            <div class="flex gap-2">
+                <img src="assets/hamb-7.png" 
+                    alt="Smash"
+                    class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300">
+                <div>
+                    <p class="font-bold text-lg">Hamburguer Onion Rings</p>
+                    <p class="text-sm">Pão Brioche, 160g de carne bovina, bacon e creme de chedar</p>
+                    
+                    <div class="flex items-center gap-2 justify-between mt-3">
+                        <p class="font-bold text-lg">R$30.00</p>
+                        <button 
+                            class="bg-gray-900 px-5 rounded add-to-cart-btn"
+                            data-name="Hamburguer Onion Rings"
+                            data-price="30.00"
+                            >
+                            <i class="fa fa-cart-plus text-lg text-white"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            
+            <div class="flex gap-2">
+                <img src="assets/hamb-8.png" 
+                    alt="Smash"
+                    class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300">
+                <div>
+                    <p class="font-bold text-lg">X-Burguer</p>
+                    <p class="text-sm">Pão Brioche, 160g de carne bovina, bacon e creme de chedar</p>
+                    
+                    <div class="flex items-center gap-2 justify-between mt-3">
+                        <p class="font-bold text-lg">R$30.00</p>
+                        <button 
+                            class="bg-gray-900 px-5 rounded add-to-cart-btn"
+                            data-name="X-Burguer"
+                            data-price="30.00"
+                            >
+                            <i class="fa fa-cart-plus text-lg text-white"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
         </main >
         
         <div class="mx-auto max-w-7xl px-2 my-2">
@@ -167,16 +256,18 @@
                     </div>
                 </div>
             </div>
+
+            
         
         </div>
     </div>
     <!--Fim do menu-->
     
     <!--Modal-->
-    <div id="cart-modal" class="bg-black/50 w-full h-full fixed top-0 left-0 z-[99] items-center justify-center hidden">
-        <div class="bg-white p-5 rounded-md min-w-[90%] md:min-w-[600px]">
+    <div id="cart-modal" class="bg-black/50 w-full h-full fixed top-0 left-0 z-[99] items-center justify-center hidden scroll-m-5">
+        <div id="cart" class="bg-white p-5 rounded-md min-w-[90%] md:min-w-[600px] min-h[600px] overflow-auto">
             <h2 class="text-center text-bold text-2xl mb-2">Meu carrinho</h2>
-            <div id="cart-items" class="flex justify-between mb-2 flex-col"></div>
+            <div id="cart-items" class="flex justify-between mb-2 flex-col "></div>
             
             <p class="font-bold">Total: <span id="cart-total">0.00</span></p>
 
@@ -211,6 +302,7 @@
            <i class="fa fa-cart-plus text-lg text-white"></i>
         </button>
     </footer>
-  <script src="script.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
