@@ -5,7 +5,6 @@
 body {
     background-color: #F6F7F8;
 }
-
 @media screen and (max-width: 768px) {
     #cart{
         overflow-y: scroll;
