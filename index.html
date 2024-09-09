@@ -74,7 +74,8 @@
                     
                     <div class="flex items-center gap-2 justify-between mt-3">
                         <p class="font-bold text-lg">R$32.90</p>
-                        <button 
+                        <button
+                             
                             class="bg-gray-900 px-5 rounded add-to-cart-btn"
                             data-name="Hamburguer Duplo"
                             data-price="32.90"
@@ -277,20 +278,58 @@
             <div id="cart-items" class="flex justify-between mb-2 flex-col "></div>
             
             <p class="font-bold">Total: <span id="cart-total">0.00</span></p>
-
+            <hr class="border-spacing-7">
+            <br>
+            <!--INICIO DOS INPUTS-->
             <p class="font-bold">Endereço de Entrega</p>
+            <p>Nome:</p>
             <input type="text"
-            placeholder="Digite seu endereço completo  e ponto de referência"
-            id="address"
+            placeholder="Digite seu nome"
+            id="name"
             class="w-full border-2 p-1 rounded my-1"
             >
+            <p class="text-red-500 hidden" id="name-warn">Infome seu nome!</p>
+
+            <p>Rua:</p>
+            <input type="text"
+            placeholder="Rua"
+            id="rua"
+            class="w-full border-2 p-1 rounded my-1"
+            >
+            <p class="text-red-500 hidden" id="rua-warn">Informe sua Rua!</p>
+
+            <p>Bairro:</p>
+            <input type="text"
+            placeholder="Bairro"
+            id="bairro"
+            class="w-full border-2 p-1 rounded my-1"
+            >
+            <p class="text-red-500 hidden" id="bairro-warn">Informe seu Bairro!</p>
+
+            <p>Número da residência:</p>
+            <input type="number"
+            placeholder="Número da residência"
+            id="housenumber"
+            class="w-full border-2 p-1 rounded my-1"
+            >
+            <p class="text-red-500 hidden" id="hnumber-warn">Informe o número!</p>
+
+            <p>Complemento:</p>
+            <input type="text"
+            placeholder="Complemento"
+            id="complemento"
+            class="w-full border-2 p-1 rounded my-1"
+            >
+            <br><br>
             <p class="font-bold">Observação</p>
             <input type="text"
             placeholder="Ex: Retirar cebola"
             id="obs"
             class="w-full border-2 p-1 rounded my-1"
             >
-            <p class="text-red-500 hidden" id="address-warn">Digite seu endereço completo!</p>
+            <!--FIM DOS INPUTS-->
+            
+            
 
             <div class="flex items-center justify-between mt-5 w-full">
                 <button id="close-modal-btn">Fechar</button>
