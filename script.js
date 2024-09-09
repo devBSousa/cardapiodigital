@@ -140,7 +140,7 @@ nameInput.addEventListener("input", function(event){
     let InputValue = event.target.value;
     
     if(InputValue !== ""){
-        nameInput.classList.remove("border-red-500")
+        nameInput.classList.remove("color-red-500")
         nameWarn.classList.add("hidden")
     }
 })
@@ -208,13 +208,13 @@ checkoutBtn.addEventListener("click", function(){
         return;
     }
 
-    if(bairroInput.value === ""){
-        bairroWarn.classList.remove("hidden")
+    if(ruaInput.value === ""){
+        ruaWarn.classList.remove("hidden")
         return;
     }
 
-    if(ruaInput.value ===""){
-        ruaWarn.classList.remove("hidden")
+    if(bairroInput.value ===""){
+        bairroWarn.classList.remove("hidden")
         return;
     }
 
