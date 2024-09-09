@@ -236,7 +236,7 @@ checkoutBtn.addEventListener("click", function(){
         )
     }).join("\n")
     const separator = "-".repeat(50);
-    const message = `*Resumo do Pedido:*\n${cartItems}\n\n*Observação:* ${cartObs.value}\n${separator}\n*Nome:* ${nameInput.value}\n*Rua:* ${ruaInput.value} - ${hnumberInput.value}\n*Bairro* ${bairroInput.value}\n*Complemento:* ${complementoInput.value}\n${separator}\n*TOTAL + taxa de entrega:* *R$${total.toFixed(2)}*`
+    const message = `*Resumo do Pedido:*\n${cartItems}\n\n*Observação:* ${cartObs.value}\n${separator}\n*Nome:* ${nameInput.value}\n*Rua:* ${ruaInput.value} - ${hnumberInput.value}\n*Bairro:* ${bairroInput.value}\n*Complemento:* ${complementoInput.value}\n${separator}\n*TOTAL + taxa de entrega:* *R$${total.toFixed(2)}*`
     const phone = "5588997349933"
 
     window.open(`https://wa.me/${phone}?text=${encodeURIComponent(message)}`, "_blank")
