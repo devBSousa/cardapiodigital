@@ -36,6 +36,21 @@ menu.addEventListener("click", function(event){
         const price = parseFloat(parentButton.getAttribute("data-price"))
         addToCart(name, price)
     }
+    if(parentButton){
+        Toastify({
+            text: "Item adicionado ao carrinho",
+            duration: 3000,
+            close: true,
+            gravity: "top", // `top` or `bottom`
+            position: "right", // `left`, `center` or `right`
+            stopOnFocus: true, // Prevents dismissing of toast on hover
+            style: {
+              background: "#22c55e",
+            },
+            onClick: function(){} // Callback after click
+          }).showToast();
+        return;
+    }
 })
 
 
