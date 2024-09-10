@@ -278,6 +278,13 @@
             <div id="cart-items" class="flex justify-between mb-2 flex-col "></div>
             
             <p class="font-bold">Total: <span id="cart-total">0.00</span></p>
+            <p class="font-bold">Entrega: R$5,00</p>
+            <p class="font-bold">Observação</p>
+            <input type="text"
+            placeholder="Ex: Retirar cebola"
+            id="obs"
+            class="w-full border-2 p-1 rounded my-1"
+            >
             <hr class="border-spacing-7">
             <br>
             <!--INICIO DOS INPUTS-->
@@ -321,12 +328,22 @@
             class="w-full border-2 p-1 rounded my-1"
             >
             <br><br>
-            <p class="font-bold">Observação</p>
-            <input type="text"
-            placeholder="Ex: Retirar cebola"
-            id="obs"
-            class="w-full border-2 p-1 rounded my-1"
-            >
+            
+
+            <form>
+                <p class="font-bold">Forma de pagamento:</p>
+                <input type="radio" id="cartao" name="pay" value="Cartão">
+                <label for="pay1">Cartão</label><br>
+                
+                <input type="radio" id="pix" name="pay" value="Pix">
+                <label for="pay2">Pix</label><br>
+                
+                <input type="radio" id="dinheiro" name="pay" value="Dinheiro">
+                <label for="pay3">Dinheiro</label><br>
+            </form>
+
+            <p id="resultado"></p>
+            <div id="InputTroco"></div>
             <!--FIM DOS INPUTS-->
             
             
