@@ -262,11 +262,13 @@ checkoutBtn.addEventListener("click", function(){
             `${item.name} - QTD: ${item.quantity} - Preço: R$${totItem}`
         )
     }).join("\n")
+    const payform = document.querySelector('input[name="pay"]:checked').value;
+
     const inputTroco = document.getElementById('valor-troco');
     const trocoValor = inputTroco && inputTroco.value ? parseFloat(inputTroco.value) : 0;
     const trocoTexto = trocoValor > 0 ? `*Troco para:* R$ ${trocoValor.toFixed(2)}` : "";
     const separator = "-".repeat(50);
-    const message = `*Resumo do Pedido:*\n${cartItems}\n\n*Observação:* ${cartObs.value}\n${separator}\n*Nome:* ${nameInput.value}\n*Rua:* ${ruaInput.value} - ${hnumberInput.value}\n*Bairro:* ${bairroInput.value}\n*Complemento:* ${complementoInput.value}\n${separator}\n${trocoTexto}\n*TOTAL + taxa de entrega:* *R$${total.toFixed(2)}*`
+    const message = `*Resumo do Pedido:*\n${cartItems}\n\n*Observação:* ${cartObs.value}\n${separator}\n*Nome:* ${nameInput.value}\n*Rua:* ${ruaInput.value} - ${hnumberInput.value}\n*Bairro:* ${bairroInput.value}\n*Complemento:* ${complementoInput.value}\n${separator}\n*Pagamento:* ${payform}\n${trocoTexto}\n*TOTAL + taxa de entrega:* *R$${total.toFixed(2)}*`
     const phone = "5588997349933"
 
     window.open(`https://wa.me/${phone}?text=${encodeURIComponent(message)}`, "_blank")
