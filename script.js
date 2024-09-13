@@ -335,7 +335,7 @@ checkoutBtn.addEventListener("click", function () {
     const inputTroco = document.getElementById('valor-troco');
     const trocoValor = inputTroco && inputTroco.value ? parseFloat(inputTroco.value) : 0;
     const trocoTexto = trocoValor > 0 ? `*Troco para:* R$ ${trocoValor.toFixed(2)}` :"";
-    const separator = "-".repeat(50);
+    const separator = "-".repeat(40);
     const message = `*Resumo do Pedido:*\n*Horário:* ${hora}:${minute}\n*Estimativa:* 60 - 80 minutos\n\n${cartItems}\n\n*Observação:* ${cartObs.value}\n*${separator}*\n*Tipo de entrega:* ${retirada}\n*Nome:* ${nameInput.value}\n*Rua:* ${ruaInput.value} - ${hnumberInput.value}\n*Bairro:* ${bairroInput.value}\n*Complemento:* ${complementoInput.value}\n*${separator}*\n*Pagamento:* ${payform}\n${trocoTexto}\n*TOTAL:* *R$${total.toFixed(2)}*\n*${separator}*\n*Continue Pedindo:*\nhttps://cardapiodigital-hazel.vercel.app/`
     const phone = "5588997349933"
 
