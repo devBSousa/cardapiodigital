@@ -16,6 +16,8 @@ const ruaWarn = document.getElementById("rua-warn");
 const hnumberInput = document.getElementById("housenumber");
 const hnumberWarn = document.getElementById("hnumber-warn");
 const complementoInput = document.getElementById("complemento");
+const foneInput = document.getElementById("fone");
+const foneWarn = document.getElementById("fone-warn");
 
 let cart = [];
 
@@ -96,11 +98,11 @@ function updateCartModal() {
                 </div>
                 
                 <div class="counter flex justify-between items-center">
-                    <button class="remove-from-cart-btn font-bold" data-name="${item.name}">
+                    <button id="counter-btn" class="remove-from-cart-btn font-bold" data-name="${item.name}">
                         -
                     </button>
                     <p class="flex">${item.quantity}</p>
-                    <button class="add-to-cart-btn font-bold" data-name="${item.name}">
+                    <button id="counter-btn" class="add-to-cart-btn font-bold" data-name="${item.name}">
                         +
                     </button>
                 </div>
@@ -155,8 +157,17 @@ nameInput.addEventListener("input", function (event) {
     if (inputValue !== "") {
         nameInput.classList.remove("border-red-500");
         nameWarn.classList.add("hidden");
+        document.getElementById("name").focus();
     }
 });
+
+foneInput.addEventListener("input", function(event){
+    let inputValue = event.target.value;
+    if(inputValue !== "") {
+        foneInput.classList.remove("border-red-500")
+        foneWarn.classList.add("hidden");
+    }
+})
 
 bairroInput.addEventListener("input", function (event) {
     let inputValue = event.target.value;
@@ -242,6 +253,12 @@ checkoutBtn.addEventListener("click", function () {
         return;
     }
 
+    if(foneInput.value === "") {
+        foneWarn.classList.remove("hidden");
+        foneInput.classList.add("border-Red-500")
+        return;
+    }
+
     if (ruaInput.value === "") {
         ruaWarn.classList.remove("hidden");
         return;
@@ -256,6 +273,8 @@ checkoutBtn.addEventListener("click", function () {
         hnumberWarn.classList.remove("hidden");
         return;
     }
+
+    
 
     let payformOption = document.querySelector('input[name="pay"]:checked');
     if (!payformOption) {
@@ -305,17 +324,19 @@ checkoutBtn.addEventListener("click", function () {
     const cartItems = cart.map((item) => {
         const totItem = (item.quantity * item.price).toFixed(2);
         return (
-            `${item.name} - QTD: ${item.quantity} - Preço: R$${totItem}`
+            `*${item.name} - QTD: ${item.quantity} - Preço: R$${totItem}*\n`
         )
     }).join("\n")
     const payform = document.querySelector('input[name="pay"]:checked').value;
-
+    const data = new Date();
+    const hora = data.getHours();
+    const minute = data.getMinutes();
     const retirada = document.querySelector('input[name="delivery"]:checked').value;
     const inputTroco = document.getElementById('valor-troco');
     const trocoValor = inputTroco && inputTroco.value ? parseFloat(inputTroco.value) : 0;
-    const trocoTexto = trocoValor > 0 ? `*Troco para:* R$ ${trocoValor.toFixed(2)}` : "";
+    const trocoTexto = trocoValor > 0 ? `*Troco para:* R$ ${trocoValor.toFixed(2)}` :"";
     const separator = "-".repeat(50);
-    const message = `*Resumo do Pedido:*\n${cartItems}\n\n*Observação:* ${cartObs.value}\n${separator}\n*Tipo de entrega:* ${retirada}\n*Nome:* ${nameInput.value}\n*Rua:* ${ruaInput.value} - ${hnumberInput.value}\n*Bairro:* ${bairroInput.value}\n*Complemento:* ${complementoInput.value}\n${separator}\n*Pagamento:* ${payform}\n${trocoTexto}\n*TOTAL:* *R$${total.toFixed(2)}*\n${separator}\n*Continue Pedindo:*\nhttps://cardapiodigital-hazel.vercel.app/`
+    const message = `*Resumo do Pedido:*\n*Horário:* ${hora}:${minute}\n*Estimativa:* 60 - 80 minutos\n\n${cartItems}\n\n*Observação:* ${cartObs.value}\n*${separator}*\n*Tipo de entrega:* ${retirada}\n*Nome:* ${nameInput.value}\n*Rua:* ${ruaInput.value} - ${hnumberInput.value}\n*Bairro:* ${bairroInput.value}\n*Complemento:* ${complementoInput.value}\n*${separator}*\n*Pagamento:* ${payform}\n${trocoTexto}\n*TOTAL:* *R$${total.toFixed(2)}*\n*${separator}*\n*Continue Pedindo:*\nhttps://cardapiodigital-hazel.vercel.app/`
     const phone = "5588997349933"
 
     window.open(`https://wa.me/${phone}?text=${encodeURIComponent(message)}`, "_blank")
