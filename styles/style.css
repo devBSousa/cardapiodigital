@@ -41,6 +41,18 @@ body {
 .add-to-cart-btn {
     font-size: x-large;
 }
+
+#counter-btn{
+    background-color: white;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+}
+
+#counter-btn:hover {
+    transform: scale(1.1);
+    color: red;
+}
+
 @media screen and (max-width: 450px) {
     #cart{
         overflow-y: scroll;
