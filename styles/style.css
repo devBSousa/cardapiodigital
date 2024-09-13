@@ -15,6 +15,32 @@ body {
     transform: scale(1.1);
 }
 
+
+#cart{
+    overflow-y: scroll;
+    width: 50%;
+    height: 80%;  
+}
+
+.counter {
+    width: 20%;
+    gap: 20px;
+}
+
+.fa-brands {
+    color: #04BFAD;
+}
+.fa-solid {
+    margin:0%;
+    padding: 0;
+}
+.remove-from-cart-btn {
+    font-size: xx-large;
+}
+
+.add-to-cart-btn {
+    font-size: x-large;
+}
 @media screen and (max-width: 450px) {
     #cart{
         overflow-y: scroll;
@@ -23,10 +49,5 @@ body {
     }
 }
 
-@media screen and (min-width: 768px) {
-    #cart{
-        overflow-y: scroll;
-        width: 50%;
-        height: 80%;  
-    }
-}
+
+
