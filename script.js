@@ -330,7 +330,7 @@ checkoutBtn.addEventListener("click", function () {
     const payform = document.querySelector('input[name="pay"]:checked').value;
     const data = new Date();
     const hora = data.getHours();
-    const minute = data.getMinutes();
+    const minute = String(data.getMinutes()).padStart(2, '0');
     const retirada = document.querySelector('input[name="delivery"]:checked').value;
     const inputTroco = document.getElementById('valor-troco');
     const trocoValor = inputTroco && inputTroco.value ? parseFloat(inputTroco.value) : 0;
